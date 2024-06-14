@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val preferencesManager: PreferencesManager = PreferencesManager(applicationContext)
         preferencesManager.putString(Constants.KEY_AUTH_TOKEN, "arega")
-        binding.answer.setText(preferencesManager.getString(Constants.KEY_AUTH_TOKEN))
+       // binding.button.setText(preferencesManager.getString(Constants.KEY_AUTH_TOKEN))
 
     }
 }
