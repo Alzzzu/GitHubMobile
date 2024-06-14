@@ -1,4 +1,7 @@
 package my.first.github.ui.fragment
 
-class DetailInfoFragment {
+import androidx.fragment.app.Fragment
+import my.first.github.R
+
+class DetailInfoFragment : Fragment(R.layout.fragment_detail_info) {
 }

@@ -51,4 +51,8 @@ dependencies {
     //converter
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
 
+    implementation("android.arch.navigation:navigation-ui:1.0.0-alpha02")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.2.1")
+    implementation("implementation 'androidx.navigation:navigation-ui-ktx:2.7.7'")
+
 }

@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:id="@+id/git_nav_graph">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/git_nav_graph"
+    app:startDestination="@id/gitNavHostFragment">
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="my.first.github.ui.fragment.AuthFragment"
+        android:label="AuthFragment" />
+    <fragment
+        android:id="@+id/detailInfoFragment"
+        android:name="my.first.github.ui.fragment.DetailInfoFragment"
+        android:label="DetailInfoFragment" />
+    <fragment
+        android:id="@+id/repositoriesListFragment"
+        android:name="my.first.github.ui.fragment.RepositoriesListFragment"
+        android:label="RepositoriesListFragment" >
+        <action
+            android:id="@+id/action_repositoriesListFragment_to_detailInfoFragment"
+            app:destination="@id/detailInfoFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
 </navigation>

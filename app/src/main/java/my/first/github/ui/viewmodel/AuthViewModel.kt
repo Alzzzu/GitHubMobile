@@ -1,10 +1,12 @@
 package my.first.github.ui.viewmodel
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import kotlinx.coroutines.flow.Flow
 
-class AuthViewModel() {
+class AuthViewModel(application: Application) : AndroidViewModel(application) {
 /*    val token: MutableLiveData<String>
     val state: LiveData<State>
     val actions: Flow<Action>
@@ -12,7 +14,6 @@ class AuthViewModel() {
 
  */
     fun onSignButtonPressed() {
-        // TODO:
     }
 
     sealed interface State {
