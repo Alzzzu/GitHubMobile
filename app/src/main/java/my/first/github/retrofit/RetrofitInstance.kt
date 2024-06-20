@@ -1,6 +1,6 @@
 package my.first.github.retrofit
 
-import my.first.github.utils.Constants.Companion.BASE_URL
+import my.first.github.utils.KeyValueStorage.Companion.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

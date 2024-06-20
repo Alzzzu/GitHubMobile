@@ -6,8 +6,6 @@ import androidx.navigation.Navigation
 import dagger.hilt.android.AndroidEntryPoint
 import my.first.github.R
 import my.first.github.databinding.ActivityMainBinding
-import my.first.github.utils.Constants
-import my.first.github.utils.PreferencesManager
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

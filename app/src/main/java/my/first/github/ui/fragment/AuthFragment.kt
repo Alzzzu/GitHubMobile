@@ -1,26 +1,20 @@
 package my.first.github.ui.fragment
 
-import android.app.AlertDialog
 import android.content.res.ColorStateList
 import android.graphics.Color
-import android.graphics.PorterDuff
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import my.first.github.R
 import my.first.github.databinding.FragmentAuthBinding
 import my.first.github.ui.viewmodel.AuthViewModel
-import my.first.github.utils.Constants
+import my.first.github.utils.KeyValueStorage
 import my.first.github.utils.DialogHelper.Companion.buildDialog
 import my.first.github.utils.PreferencesManager
 import javax.inject.Inject
@@ -81,7 +75,7 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
             when(response){
                 is AuthViewModel.State.Idle ->{
                     binding.button.text = resources.getString(R.string.sign_in)
-                    preferencesManager.putString(Constants.KEY_AUTH_TOKEN, binding.et.text.toString())
+                    preferencesManager.putString(KeyValueStorage.KEY_AUTH_TOKEN, binding.et.text.toString())
                     binding.button.findNavController().apply{
                         try{
                         navigate(R.id.action_authFragment2_to_repositoriesListFragment2)
