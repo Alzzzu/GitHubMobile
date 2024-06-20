@@ -1,7 +1,11 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("androidx.navigation.safeargs")
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
+
 
 android {
     namespace = "my.first.github"
@@ -9,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "my.first.github"
-        minSdk = 24
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -40,7 +44,7 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -51,8 +55,17 @@ dependencies {
     //converter
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
 
-    implementation("android.arch.navigation:navigation-ui:1.0.0-alpha02")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.2.1")
+  //  implementation("android.arch.navigation:navigation-ui:1.0.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.5.0")
  //   implementation("implementation 'androidx.navigation:navigation-ui-ktx:2.7.7'")
+    implementation("com.squareup.retrofit2:converter-gson:2.5.0")
+    implementation("com.intuit.sdp:sdp-android:1.1.1")
+    implementation("com.intuit.ssp:ssp-android:1.1.1")
+    implementation("com.google.dagger:hilt-android:2.46.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.46.1")
+}
 
+kapt {
+    correctErrorTypes = true
 }

@@ -1,29 +1,22 @@
 package my.first.github.repository
 
-import my.first.github.models.Repo
-import my.first.github.models.RepoDetails
-import my.first.github.models.UserInfo
 
-class AppRepository {
-    suspend fun getRepositories(): List<Repo> {
-        // TODO:
-        return listOf(Repo("a"))
-    }
+import my.first.github.retrofit.RetrofitInstance
+import my.first.github.utils.Constants
+import my.first.github.utils.PreferencesManager
+import javax.inject.Inject
 
-    suspend fun getRepository(repoId: String): RepoDetails {
-        // TODO:
-        return RepoDetails("A")
-    }
+class AppRepository @Inject constructor(private val preferencesManager: PreferencesManager) {
 
-    suspend fun getRepositoryReadme(ownerName: String, repositoryName: String, branchName: String): String {
-        // TODO:
-        return "A"
-    }
+    suspend fun getRepositories() =
+         RetrofitInstance.api.getReposList(
+             "token ${preferencesManager.getString(Constants.KEY_AUTH_TOKEN)}"
+         )
 
-    suspend fun signIn(token: String): UserInfo {
-        // TODO:
-        return UserInfo("f")
-    }
+    suspend fun getRepositoryReadme(ownerName: String, repositoryName: String) =
+        RetrofitInstance.api.getRepositoryReadme(ownerName, repositoryName)
 
-    // TODO:
+    suspend fun signIn(token: String) = RetrofitInstance.api.getValidation(
+        "token $token"
+    )
 }

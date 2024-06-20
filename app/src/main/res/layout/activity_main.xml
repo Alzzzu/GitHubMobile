@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <androidx.fragment.app.FragmentContainerView
+    <fragment
         android:id="@+id/gitNavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        app:navGraph="@navigation/git_nav_graph"/>
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/main_nav_graph"/>
+        <!--app:navGraph="@navigation/git_nav_graph"-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

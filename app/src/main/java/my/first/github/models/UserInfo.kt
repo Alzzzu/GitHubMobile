@@ -1,3 +1,5 @@
 package my.first.github.models
 
-data class UserInfo(val name: String)
+data class UserInfo(
+    val login: String? = null
+)

@@ -4,7 +4,9 @@ class Constants  {
     companion object{
         const val KEY_PREFERENCES_NAME = "githubpreferences"
         const val KEY_AUTH_TOKEN ="authtoken"
-        const val MY_TOKEN ="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"
+        const val CLIENT_ID ="Ov23liLXVM42ik03eM7M"
+        const val SECRET = "e181c71d1c7a619dd963ca2d4dab40c13f83594f"
+        const val BASE_URL = "https://api.github.com/"
 
     }
 }

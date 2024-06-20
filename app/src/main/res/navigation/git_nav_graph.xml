@@ -17,10 +17,6 @@
         android:label="RepositoriesListFragment" >
         <action
             android:id="@+id/action_repositoriesListFragment_to_detailInfoFragment"
-            app:destination="@id/detailInfoFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_enter_anim"
-            app:popExitAnim="@anim/nav_default_exit_anim" />
+            app:destination="@id/detailInfoFragment" />
     </fragment>
 </navigation>
